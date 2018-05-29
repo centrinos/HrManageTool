@@ -36,7 +36,7 @@ public class LoginController {
 			mv.addObject("message", "用户不存在或密码错误");
 			mv.setViewName("/login");
 		} else {
-			session.setAttribute(DemoConstants.ISLOGIN, true);
+			session.setAttribute(DemoConstants.LOGIN, true);
 			redirectAttributes.addFlashAttribute("user", user);
 		//	mv.addObject("user", user);
 			mv.setViewName("redirect:/hrManagement");
@@ -61,7 +61,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
-		session.removeAttribute(DemoConstants.ISLOGIN);
+		session.removeAttribute(DemoConstants.LOGIN);
 		LOGGER.info("=====logout=====");
 		return "redirect:/login";
 	}

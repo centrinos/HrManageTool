@@ -11,8 +11,8 @@ import com.csssi.demo.domain.User;
 @Mapper
 public interface UserMapper {
 
-	@Select("select * from tb_user where tb_name = #{loginname} and tb_password = #{password}")
-	@Results({ @Result(id = true, property = "id", column = "tb_id"),
-			@Result(property = "username", column = "tb_name"), @Result(property = "level", column = "tb_level") })
+	@Select("select * from tb_user where col_username = #{loginname} and col_password = #{password}")
+	@Results({ @Result(id = true, property = "id", column = "col_id"),
+			@Result(property = "username", column = "col_username"), @Result(property = "level", column = "col_level") })
 	User getLoginUser(@Param(value = "loginname") String loginname, @Param(value = "password") String password);
 }
