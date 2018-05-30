@@ -15,7 +15,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		Object o = request.getSession().getAttribute(DemoConstants.ISLOGIN);
+		Object o = request.getSession().getAttribute(DemoConstants.LOGIN);
 		if (o != null && o.equals(true)) {
 			return true;
 		} else {
