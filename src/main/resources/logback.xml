@@ -11,7 +11,7 @@
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<!-- 只打印INFO级别的日志 -->
-			<level>INFO</level>
+			<level>DEBUG</level>
 			<onMatch>ACCEPT</onMatch>
 			<onMismatch>DENY</onMismatch>
 		</filter>
@@ -19,6 +19,11 @@
 
 	<!-- 可用来获取StatusManager中的状态 -->
 	<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+
+	<logger name="com.csssi.demo.mapper"  additivity="false">
+		<level value = "DEBUG" />
+		<appender-ref ref="STDOUT"/>
+	</logger>
 
 	<root>
 		<level value="INFO" />

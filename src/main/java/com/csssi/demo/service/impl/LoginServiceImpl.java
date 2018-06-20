@@ -11,7 +11,7 @@ import com.csssi.demo.service.LoginService;
 public class LoginServiceImpl implements LoginService {
 
 	@Autowired
-	UserMapper userMapper;
+	private UserMapper userMapper;
 
 	@Override
 	public User login(String loginname, String password) {

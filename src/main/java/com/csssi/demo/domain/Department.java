@@ -5,24 +5,24 @@ import java.util.ArrayList;
 
 public class Department implements Serializable {
 
-    private int depId;
-    private  String depName;
+    private int deptId;
+    private String deptName;
     private ArrayList<Employee> employees;
 
-    public int getDepId() {
-        return depId;
+    public int getDeptId() {
+        return deptId;
     }
 
-    public void setDepId(int depId) {
-        this.depId = depId;
+    public void setDeptId(int depId) {
+        this.deptId = depId;
     }
 
-    public String getDepName() {
-        return depName;
+    public String getDeptName() {
+        return deptName;
     }
 
-    public void setDepName(String depName) {
-        this.depName = depName;
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
     }
 
     public ArrayList<Employee> getEmployees() {
@@ -31,5 +31,14 @@ public class Department implements Serializable {
 
     public void setEmployees(ArrayList<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "deptId=" + deptId +
+                ", deptName='" + deptName + '\'' +
+                ", employees=" + employees +
+                '}';
     }
 }
