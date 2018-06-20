@@ -6,11 +6,13 @@ import com.csssi.demo.service.HRService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 
 @RestController
+@RequestMapping(value = "/query")
 public class HRController {
 
     @Autowired
@@ -18,16 +20,8 @@ public class HRController {
     HRService hrService;
 
 
-    @GetMapping(value = "/abc")
-    public String search() {
-        Department department = hrService.getDepartmentByID(1);
-        StringBuffer sb = new StringBuffer();
-        sb.append(department.toString());
-        ArrayList<Employee> list = department.getEmployees();
-        for(Employee e: list) {
-            sb.append(e.toString());
-        }
-      // .forEach(emp->sb.append(emp.toString()));
-        return sb.toString();
+    @GetMapping(value = "/departments/{deptId}")
+    public Department queryDepartment(@PathVariable(value = "deptId") int deptId) {
+        return hrService.getDepartmentByID(deptId);
     }
 }

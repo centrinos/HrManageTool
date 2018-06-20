@@ -11,22 +11,39 @@
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<!-- 只打印INFO级别的日志 -->
-			<level>DEBUG</level>
+			<level>INFO</level>
 			<onMatch>ACCEPT</onMatch>
 			<onMismatch>DENY</onMismatch>
 		</filter>
 	</appender>
+
+	<appender name="Mybaties" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
+			by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<!-- 只打印INFO级别的日志 -->
+			<level>Debug</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
 
 	<!-- 可用来获取StatusManager中的状态 -->
 	<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
 
 	<logger name="com.csssi.demo.mapper"  additivity="false">
 		<level value = "DEBUG" />
-		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="Mybaties"/>
 	</logger>
 
 	<root>
 		<level value="INFO" />
 		<appender-ref ref="STDOUT" />
 	</root>
+
 </configuration>
