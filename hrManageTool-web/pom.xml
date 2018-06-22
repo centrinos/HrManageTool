@@ -14,10 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>com.csssi.tool</groupId>
-            <artifactId>hrManageTool-domain</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.csssi.tool</groupId>
             <artifactId>hrManageTool-service</artifactId>
         </dependency>
         <dependency>
@@ -39,5 +35,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
