@@ -1,8 +1,11 @@
 package com.csssi.hrmanage.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
+@JsonIgnoreProperties({"employees","handler"})
 public class Department implements Serializable {
 
     private int deptId;

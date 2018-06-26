@@ -28,7 +28,7 @@ public interface EmployeeMapper {
             @Result(column = "em_sex",property =  "sex"),
             @Result(column = "em_level",property = "level"),
             @Result(column = "em_deptid",property = "department",
-                    one=@One(select = "com.csssi.demo.mapper.DepartmentMapper.selectDeptByID",
+                    one=@One(select = "com.csssi.hrmanage.mapper.DepartmentMapper.selectDeptByID",
                             fetchType = FetchType.EAGER)),
             @Result(column = "em_salary",property = "salary")
     })
