@@ -3,14 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.csssi.tool</groupId>
-    <artifactId>hrManageTool</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <name>hrManageTool</name>
-    <description>Demo project for Spring Boot</description>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,11 +10,19 @@
         <relativePath/><!-- lookup parent from repository -->
     </parent>
 
+    <groupId>com.csssi.tool</groupId>
+    <artifactId>springboot-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>springboot demo</name>
+    <description>Demo project for Spring Boot</description>
+
     <modules>
-        <module>hrManageTool-web</module>
-        <module>hrManageTool-service</module>
-        <module>hrManageTool-dao</module>
-        <module>hrManageTool-domain</module>
+        <module>springboot-demo-web</module>
+        <module>springboot-demo-service</module>
+        <module>springboot-demo-dao</module>
+        <module>springboot-demo-domain</module>
     </modules>
 
     <properties>
@@ -35,28 +35,25 @@
         <dependencies>
             <dependency>
                 <groupId>com.csssi.tool</groupId>
-                <artifactId>hrManageTool-web</artifactId>
+                <artifactId>springboot-demo-web</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.csssi.tool</groupId>
-                <artifactId>hrManageTool-dao</artifactId>
+                <artifactId>springboot-demo-dao</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.csssi.tool</groupId>
-                <artifactId>hrManageTool-domain</artifactId>
+                <artifactId>springboot-demo-domain</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.csssi.tool</groupId>
-                <artifactId>hrManageTool-service</artifactId>
+                <artifactId>springboot-demo-service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-
-
 
 </project>
