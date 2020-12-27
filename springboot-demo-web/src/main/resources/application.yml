@@ -1,6 +1,12 @@
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/hrmanage?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: chen.yu
-    password: suzhou@1
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: "chenyu"
+    password: "Suzhou@01"
+  # Hikari 数据源专用配置
+  # JPA 相关配置
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate.ddl-auto: none

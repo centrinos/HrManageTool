@@ -10,14 +10,11 @@
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
 		<encoder>
-			<pattern>${CONSOLE_LOG_PATTERN}
-			</pattern>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<!-- 只打印INFO级别的日志 -->
 			<level>INFO</level>
-			<onMatch>ACCEPT</onMatch>
-			<onMismatch>DENY</onMismatch>
 		</filter>
 	</appender>
 
@@ -40,7 +37,7 @@
 	<!-- 可用来获取StatusManager中的状态 -->
 	<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
 
-	<logger name="com.csssi.hrmanage.mapper"  additivity="false">
+	<logger name="com.csssi.manage.mapper"  additivity="false">
 		<level value = "DEBUG" />
 		<appender-ref ref="Mybaties"/>
 	</logger>

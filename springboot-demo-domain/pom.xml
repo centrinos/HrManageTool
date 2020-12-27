@@ -10,11 +10,5 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>springboot-demo-domain</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-json</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

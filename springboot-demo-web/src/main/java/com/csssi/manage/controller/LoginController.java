@@ -1,11 +1,10 @@
-package com.csssi.hrmanage.controller;
+package com.csssi.manage.controller;
 
-import com.csssi.hrmanage.entity.User;
-import com.csssi.hrmanage.service.LoginService;
+import com.csssi.manage.entity.User;
+import com.csssi.manage.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,8 +18,8 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+
 	@Autowired
-	@Qualifier("loginService")
 	private LoginService loginService;
 
 	@RequestMapping(value = "/login_in", method = RequestMethod.POST)
@@ -49,7 +48,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/hrManagement")
 	public String hrManagement() {
-		return "hrManagement";
+		return "EmployeeManage";
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

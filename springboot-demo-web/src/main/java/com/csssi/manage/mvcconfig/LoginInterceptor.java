@@ -1,4 +1,4 @@
-package com.csssi.hrmanage.mvcconfig;
+package com.csssi.manage.mvcconfig;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -6,7 +6,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Component("loginInterceptor")
+@Component
 public class LoginInterceptor implements HandlerInterceptor {
 
 	public static String[] IGNORE_PATH = { "/login_in","/login", "/error" };
