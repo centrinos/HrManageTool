@@ -1,12 +1,28 @@
+server:
+  port: 8080
+
 spring:
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:/D:/Git Projects/SpringBootDemo/test;AUTO_SERVER=TRUE
+    # url: jdbc:h2:mem:test   #不持久化，放在内存中
+    # schema: classpath:db/schema-h2.sql #初始化建表
+    # data: classpath:db/data-h2.sql #初始化数据
     username: "chenyu"
     password: "Suzhou@01"
-  # Hikari 数据源专用配置
+    # Hikari 数据源专用配置
+    hikari:
+
+  h2:
+    console:
+      path: /h2-console
+      enabled: true #必须配置，不然无法访问
+
   # JPA 相关配置
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
-    hibernate.ddl-auto: none
+    hibernate:
+      ddl-auto: update
+

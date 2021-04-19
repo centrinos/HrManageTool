@@ -1,11 +1,14 @@
 package com.csssi.manage.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +22,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "Employee")
 public class Employee implements Serializable {
 
@@ -41,7 +45,8 @@ public class Employee implements Serializable {
     @Column(name = "salary")
     private Double salary;
 
-    @ManyToOne
+    @JsonIgnore
+    @ManyToOne(optional = false)
     @JoinColumn(name = "department_id")
     private Department department;
 

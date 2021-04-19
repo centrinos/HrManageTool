@@ -1,8 +1,6 @@
 package com.csssi.manage.service.impl;
 
-import com.csssi.manage.entity.Department;
 import com.csssi.manage.entity.Employee;
-import com.csssi.manage.mapper.DepartmentRepository;
 import com.csssi.manage.mapper.EmployeeRepository;
 import com.csssi.manage.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +10,30 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
-    private DepartmentRepository departmentRepository;
-
-    @Autowired
     private EmployeeRepository employeeRepository;
 
     @Override
-    public Employee getEmployeeById(long id) {
+    public Employee getById(long id) {
         return employeeRepository.getOne(id);
     }
 
     @Override
-    public Department getDepartmentByID(long id) {
-        return departmentRepository.getOne(id);
+    public Employee createEmployee(Employee employee) {
+        employeeRepository.save(employee);
+        return employee;
     }
+
+    @Override
+    public void deleteEmployee(long id) {
+        Employee employee = getById(id);
+        if (employee != null) {
+            employeeRepository.delete(employee);
+        }
+    }
+
+    @Override
+    public Employee getByDepartmentId(long id) {
+        return employeeRepository.getByDepartmentId(id);
+    }
+
 }

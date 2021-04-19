@@ -18,7 +18,7 @@
 		</filter>
 	</appender>
 
-	<appender name="Mybaties" class="ch.qos.logback.core.ConsoleAppender">
+	<appender name="dblog" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
 			by default -->
 		<encoder>
@@ -39,7 +39,7 @@
 
 	<logger name="com.csssi.manage.mapper"  additivity="false">
 		<level value = "DEBUG" />
-		<appender-ref ref="Mybaties"/>
+		<appender-ref ref="dblog"/>
 	</logger>
 
 	<root>

@@ -1,12 +1,14 @@
 package com.csssi.manage.service;
 
-
-import com.csssi.manage.entity.Department;
 import com.csssi.manage.entity.Employee;
 
 public interface EmployeeService {
 
-     Employee getEmployeeById(long id);
+     Employee getById(long id);
 
-     Department getDepartmentByID(long id);
+     Employee createEmployee(Employee employee);
+
+     void deleteEmployee(long id);
+
+     Employee getByDepartmentId(long id);
 }
